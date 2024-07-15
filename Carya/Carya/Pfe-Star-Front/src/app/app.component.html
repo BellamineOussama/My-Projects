@@ -1,0 +1,6 @@
+<div class="container">
+    <button class="btn" (click)="login()" *ngIf="!kc.isLoggedIn()">Login</button>
+    <button class="btn" (click)="onlogOut()"*ngIf="kc.isLoggedIn()">LogOut</button>
+</div>
+
+<router-outlet></router-outlet>

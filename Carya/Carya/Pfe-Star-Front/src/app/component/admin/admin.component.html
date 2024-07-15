@@ -1,0 +1,59 @@
+<div class="container-fluid">
+  <div class="row">
+    <!-- Sidebar -->
+    <div class="col-12 col-md-3 col-xl-2 sidebar ">
+      <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item m-3">
+            <a class="nav-link active header__action-btn" routerLink="/" routerLinkActive="active">
+              <i class="bi bi-house-door-fill"></i>
+              <span>Back To Home</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/admin/dash" routerLinkActive="active">
+              <i class="bi bi-house-door-fill"></i>
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#usersSubMenu">
+              <i class="bi bi-people"></i>
+              <span>Users</span>
+            </a>
+            <div class="collapse" id="usersSubMenu">
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/admin/agenceTable">Agence</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/admin/driverTable">Driver</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/admin/clientTable">Client</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/admin/locationtable">
+              <i class="bi bi-geo-alt"></i>
+              <span>Locations</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/admin/carsTable">
+              <i class="bi bi-car"></i>
+              <span>Cars</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="col py-3">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<div style="margin-left: 20%">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">modele</th>
+        <th scope="col">type</th>
+        <th scope="col">immatriculation</th>
+        <th scope="col">actions</th> <!-- New column for actions -->
+      </tr>
+    </thead>
+    <tbody  *ngFor="let car of cars" class="inner-table">
+      <tr>
+        <th scope="row">{{ car.id }}</th>
+        <td>{{ car.modele }}</td>
+        <td>{{ car.typeVehicule }}</td>
+        <td>{{ car.immatriculation }}</td>
+        <td>
+          <!-- Toggle dropdown for additional information -->
+          <button (click)="toggleDetails(car.id)">Details</button>
+          <div *ngIf="car.showDetails">
+            <p >agence: {{ car.agenceName }}</p>
+            <p >years: {{ car.years }}</p>
+            <p >consomation: {{ car.consomation }}</p>
+            <p >price for a day: {{ car.prixParJour }}.DT</p>
+            <p >disponible: {{ car.disponible }}</p>
+
+            <!-- Add more details as needed -->
+            <button class="delete-button" (click)="delete(car.id)">Delete</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

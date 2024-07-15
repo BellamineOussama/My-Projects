@@ -1,0 +1,33 @@
+<div style="margin-left: 17%">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id </th>
+        <th scope="col">email</th>
+        <th scope="col">firstname</th>
+        <th scope="col">lastname</th>
+        <th scope="col">Username</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let agence of agences">
+      <tr>
+        <th >{{ agence.id }}</th>
+        <td>{{agence.email}}</td>
+        <td>{{agence.firstname}}</td>
+        <td>{{agence.lastname}}</td>
+        <td>
+          <!-- Make the name clickable -->
+          <button (click)="toggleDetails(agence.id)">{{ agence.username }}</button>
+          <!-- Dropdown for additional information -->
+          <div *ngIf="agence.showDetails">
+            <p>Email: {{ agence.email }}</p>
+            <p>telephone: {{ agence.telephone }}</p>
+            <p>addres: {{ agence.adresse }}</p>
+            <!-- Buttons for editing and deleting -->
+            <button class="delete-button" (click)="delete(agence.id)">Delete</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

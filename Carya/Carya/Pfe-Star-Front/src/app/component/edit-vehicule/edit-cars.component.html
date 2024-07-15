@@ -1,0 +1,53 @@
+<div class="container mt-5">
+  <h2>Edit Car</h2>
+  <form (ngSubmit)="onUpdate()" #editCarForm="ngForm">
+    <div class="form-group">
+      <label for="modele">Model</label>
+      <input type="text" class="form-control" id="modele" required [(ngModel)]="car.modele" name="modele" #modele="ngModel">
+    </div>
+
+    <div class="form-group">
+      <label for="year">Year</label>
+      <input type="number" class="form-control" id="year" required [(ngModel)]="car.years" name="year" #year="ngModel">
+    </div>
+    <div class="form-group">
+      <label for="nbPlace">Number of Seats</label>
+      <input type="number" class="form-control" id="nbPlace" required [(ngModel)]="car.nbPlace" name="nbPlace" #nbPlace="ngModel">
+    </div>
+
+    <div class="form-group">
+      <label for="immatriculation">Matriculate</label>
+      <input type="text" class="form-control" id="immatriculation" required [(ngModel)]="car.immatriculation" name="immatriculation" #immatriculation="ngModel" pattern="\d{3} tun \d{5}">
+      <div *ngIf="immatriculation.invalid && immatriculation.touched" class="text-danger">
+        Plate number must be in the format xxx tun xxxxx
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="typecar">Type de véhicule</label>
+      <select class="form-control" id="typecar" [(ngModel)]="car.typeVehicule">
+        <option value="Voiture">Voiture</option>
+        <option value="Bus">Bus</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="consommation">Fuel Efficiency</label>
+      <input type="text" class="form-control" id="consommation" required [(ngModel)]="car.consomation" name="consommation" #consommation="ngModel">
+    </div>
+    <div class="form-group">
+      <label for="tronsmition">Transmission</label>
+      <input type="text" class="form-control" id="tronsmition" required [(ngModel)]="car.tronsmition" name="tronsmition" #tronsmition="ngModel">
+    </div>
+    <div class="form-group">
+      <label for="prixParJour">Price per Day</label>
+      <input type="number" class="form-control" id="prixParJour" required [(ngModel)]="car.prixParJour" name="prixParJour" #prixParJour="ngModel">
+    </div>
+    <div class="form-group">
+      <label>Car Image</label>
+      <input type="file"  accept="image/*" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3" [disabled]="!editCarForm.form.valid">Update Car</button>
+  </form>
+</div>

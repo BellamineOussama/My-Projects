@@ -1,0 +1,67 @@
+/* Combined CSS for the new component */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.table th, .table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+  color: #333;
+}
+
+.table th {
+  background-color: #189cf4;
+  color: white;
+  font-weight: bold;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #f0f8ff; /* Light blue-gray */
+}
+
+.table tbody tr:hover {
+  background-color: #d3e8ff; /* Slightly darker shade on hover */
+}
+
+/* Additional styling for the Delete button */
+button{
+  font-size: 14px;
+  color: #c0392b;
+}
+button:hover{
+  font-weight: bold;
+  text-decoration: underline;
+}
+button.delete-button {
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  background-color: #c0392b; /* Dark red color */
+  color: #fff;
+  border-radius: 3px;
+  margin-right: 5px;
+  transition: background-color 0.2s;
+}
+
+button.delete-button:hover {
+  background-color: #a5281b; /* Slightly darker shade on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .table {
+    font-size: 14px;
+  }
+  .table th, .table td {
+    padding: 10px;
+  }
+}

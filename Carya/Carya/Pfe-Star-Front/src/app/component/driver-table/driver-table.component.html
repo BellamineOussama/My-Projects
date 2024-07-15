@@ -1,0 +1,30 @@
+<div style="margin-left: 17%">
+<table class="table custom-table" >
+  <thead>
+  <tr>
+    <th scope="col">ID</th>
+    <th scope="col">Email</th>
+    <th scope="col">drivername</th>
+  </tr>
+  </thead>
+  <tbody *ngFor="let driver of drivers">
+  <tr>
+    <th >{{driver.id}}</th>
+    <td><a href="/driver/{{driver.id}}">{{driver.email}}</a></td>
+    <td>
+      <!-- Make the name clickable -->
+      <button (click)="toggleDetails(driver.id)">{{ driver.username }}</button>
+      <!-- Dropdown for additional information -->
+      <div *ngIf="driver.showDetails">
+        <p>Email: {{ driver.email }}</p>
+        <p>Password :{{driver.Password}}</p>
+        <p>firstName: {{driver.firstName}}</p>
+        <p>lastName: {{driver.lastName}}</p>
+        <!-- Buttons for editing and deleting -->
+        <button class="delete-button" (click)="delete(driver.id)">Delete</button>
+      </div>
+    </td>
+
+  </tr>
+  </tbody>
+</table>

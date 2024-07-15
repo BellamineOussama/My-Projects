@@ -1,0 +1,32 @@
+.slideshow-container {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-slider {
+  display: flex;
+  animation: scroll 10s linear infinite;
+}
+
+.logo-slide {
+  flex: 0 0 auto;
+  padding: 30px 15px;
+}
+
+.logo-slide img {
+  max-height: 100px;
+  width: auto;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(115%);
+  }
+  100% {
+    transform: translateX(-115%);
+  }
+}

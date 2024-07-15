@@ -1,0 +1,36 @@
+<div style="margin-left: 20%">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">car</th>
+        <th scope="col">matriculation</th>
+
+        <th scope="col">actions</th> <!-- New column for actions -->
+      </tr>
+    </thead>
+    <tbody *ngFor="let location of locations">
+      <tr>
+        <th >{{ location.id }}</th>
+        <td>{{ location.vehicule.modele }}</td>
+        <td>{{ location.vehicule.immatriculation }}</td>
+
+        <td>
+          <!-- Toggle dropdown for additional information -->
+          <button (click)="toggleDetails(location.id)">Details</button>
+          <div *ngIf="location.showDetails">
+            <!-- Add more details as needed -->
+            <p>start Date: {{ location.startDate }}</p>
+            <p>end Date: {{ location.endDate }}</p>
+            <p>price for a dar: {{location.vehicule.prixParJour}}</p>
+            <p>prix: {{ location.prixTotal}}</p>
+            <p>client : {{location.client.username}}</p>
+            <p>driver : {{location.chauffeur.username}}</p>
+            <!-- Buttons for editing and deleting -->
+            <button class="delete-button" (click)="delete(location.id)">Delete</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

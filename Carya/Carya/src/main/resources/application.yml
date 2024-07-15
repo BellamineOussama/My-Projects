@@ -1,0 +1,20 @@
+keycloak:
+  realm: Pfe-Star
+  domain: localhost:8081
+  adminClientId: admin-cli
+  adminClientSecret: 2nG4hATDiPMR6gkXvQ3ABXaJ9fcA2Fa7
+  client: authenticationClientId
+  urls:
+    auth: http://${keycloak.domain}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+    endpoint:
+      health:
+        show-details: always
+
+server:
+  port: 8082
